@@ -13,7 +13,7 @@ export class App extends Component {
   render() {
     return (
       <div className="skltn">
-        <h1>CV Builder</h1>
+        <h1 style={{textAlign:"center"}}>CV Builder</h1>
         <Header title="Personal Information"/>
         <Header title="About Me"/>
         <Header title="Employment History"/>

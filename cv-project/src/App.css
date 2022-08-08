@@ -1,2 +1,2 @@
-.hdr{display:flex; gap:20px;}
-button{background-color:blueviolet}
+.hdr{display:flex; gap:20px; justify-content:center;align-items:center;}
+button{background-color:blueviolet; color:rgb(167, 248, 3)}
