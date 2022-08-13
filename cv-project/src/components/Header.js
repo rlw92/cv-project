@@ -10,7 +10,7 @@ export class Header extends Component {
     return (
       <div className="hdr">
       <h2>{this.props.title}</h2>
-      <button>Edit</button>
+      <button onClick={this.props.edit}>Edit</button>
       </div>
     )
   }
