@@ -37,3 +37,5 @@ button{background-color:blueviolet; color:rgb(167, 248, 3)}
     text-decoration: none;
     cursor: pointer;
   }
+
+  p{text-align:center;}
