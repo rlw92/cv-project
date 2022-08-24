@@ -6,14 +6,33 @@ export class Education extends Component {
     
       this.state = {
         shwMdl: false,
-        PI:"Nanty comp"
+        School:"",
+        Subject:"",
+        grade:"",
+        list: [
+          {
+            school: "Nanty comp",
+            subject: "Maths",
+            grade:"A"
+          },
+          {
+            school: "Nanty",
+            subject:"English",
+            grade:"B"
+          }
+      
+        ]
         
      }
    
          this.showModal = this.showModal.bind(this)
          this.hideModal = this.hideModal.bind(this)
-         this.editInfo = this.editInfo.bind(this)
          this.onSubmitTask = this.onSubmitTask.bind(this)
+         this.addGrade = this.addGrade.bind(this)
+         this.addSchool = this.addSchool.bind(this)
+         this.addSubject = this.addSubject.bind(this)
+
+    
    }
          showModal (){
            this.setState({
@@ -27,23 +46,33 @@ export class Education extends Component {
            })
          }
    
-         editInfo (e){
-           this.setState(
-             {
-               
-               edit: e.target.value
-               
-             }
-             
-           )
          
-    }
+
+             addSchool(e){
+             this.setState({School:e.target.value})
+             }
+
+             addSubject(e){
+               this.setState({Subject:e.target.value})
+             }
+
+             addGrade(e){
+               this.setState({grade:e.target.value})
+             }
+
+            
 
     onSubmitTask = (e) => {
         e.preventDefault();
         this.setState({
-          PI: this.state.edit ,
-          edit: '' ,
+          list: this.state.list.concat({
+            school: this.state.School,
+            subject: this.state.Subject,
+            grade: this.state.grade
+          }),
+        School: '',
+        Subject: '',
+        grade: '',
           shwMdl: false
         });
       };
@@ -57,12 +86,28 @@ export class Education extends Component {
         
         <div className="modal-content">
         <span className="close" onClick={this.hideModal}>&times;</span>
-        <p>Edit Personal Information Below</p>
+        <p>Add educational Information Below</p>
+        <div className="inputs">
+        <label>Add School</label>
         <input
-        onChange={this.editInfo}
-        value={this.state.edit}
-        type="text"></input>
-        <button onClick={this.onSubmitTask}>Edit and close</button>
+        onChange={this.addSchool}
+                type="text"></input>
+                
+        <label>Add Subject</label>
+        <input
+        onChange={this.addSubject}
+                type="text"></input>
+
+        <label>Add Grade</label>
+        <input
+        onChange={this.addGrade}
+                type="text"></input>
+
+        
+
+
+        <button onClick={this.onSubmitTask}>Submit</button>
+        </div>
 
       </div>
       </div>
@@ -71,10 +116,17 @@ export class Education extends Component {
 <div className="hdr">
         <h2>Education</h2>
         
-        <button onClick={this.showModal}>Edit</button>
+        <button onClick={this.showModal}>Add</button>
         </div>
 
-        <p>{this.state.PI}</p>
+        <p>{this.state.list.map(edu=>{
+          return(<div>
+            <p> School: {edu.school} --  Subject: {edu.subject} --  Grade: {edu.grade}</p>
+          
+    
+          </div>)
+      
+        })}</p>
         
         </div>
 

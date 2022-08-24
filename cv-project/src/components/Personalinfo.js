@@ -6,16 +6,19 @@ constructor(props) {
   super(props)
 
   this.state = {
-      edit: '',
+      edit: "",
      shwMdl: false,
      PI:""
      
   }
 
+ 
       this.showModal = this.showModal.bind(this)
       this.hideModal = this.hideModal.bind(this)
       this.editInfo = this.editInfo.bind(this)
       this.onSubmitTask = this.onSubmitTask.bind(this)
+
+
 }
       showModal (){
         this.setState({
@@ -61,12 +64,13 @@ constructor(props) {
         <div className="modal-content">
         <span className="close" onClick={this.hideModal}>&times;</span>
         <p>Edit Personal Information Below</p>
+        <div className="inputs">
         <input
         onChange={this.editInfo}
         value={this.state.edit}
         type="textarea"></input>
         <button onClick={this.onSubmitTask}>Edit and close</button>
-
+      </div>
       </div>
       </div>
   }

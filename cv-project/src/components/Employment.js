@@ -57,12 +57,12 @@ constructor(props) {
         
         <div className="modal-content">
         <span className="close" onClick={this.hideModal}>&times;</span>
-        <p>Edit Personal Information Below</p>
+        <p>Add Employment Information Below</p>
         <input
         onChange={this.editInfo}
         value={this.state.edit}
         type="text"></input>
-        <button onClick={this.onSubmitTask}>Edit and close</button>
+        <button onClick={this.onSubmitTask}>Submit</button>
 
       </div>
       </div>
@@ -74,7 +74,7 @@ constructor(props) {
         <div className="hdr">
         <h2>Employment</h2>
         
-        <button onClick={this.showModal}>Edit</button>
+        <button onClick={this.showModal}>Add</button>
         </div>
         <p>{this.state.PI}</p>
         

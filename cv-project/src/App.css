@@ -39,3 +39,7 @@ button{background-color:blueviolet; color:rgb(167, 248, 3)}
   }
 
   p{text-align:center;}
+  
+  .inputs{display:flex;flex-direction: column;justify-content: center;align-items: center;}
+  .inputs button{margin:10px;}
+
