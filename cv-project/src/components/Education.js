@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export class Education extends Component {
     constructor(props) {
       super(props)
-    
+
       this.state = {
         shwMdl: false,
         School:"",
@@ -20,11 +20,11 @@ export class Education extends Component {
             subject:"English",
             grade:"B"
           }
-      
+
         ]
-        
+
      }
-   
+
          this.showModal = this.showModal.bind(this)
          this.hideModal = this.hideModal.bind(this)
          this.onSubmitTask = this.onSubmitTask.bind(this)
@@ -32,21 +32,21 @@ export class Education extends Component {
          this.addSchool = this.addSchool.bind(this)
          this.addSubject = this.addSubject.bind(this)
 
-    
+
    }
          showModal (){
            this.setState({
              shwMdl:true
            })
          }
-         
+
          hideModal (){
            this.setState({
              shwMdl:false
            })
          }
-   
-         
+
+
 
              addSchool(e){
              this.setState({School:e.target.value})
@@ -60,7 +60,7 @@ export class Education extends Component {
                this.setState({grade:e.target.value})
              }
 
-            
+
 
     onSubmitTask = (e) => {
         e.preventDefault();
@@ -81,9 +81,9 @@ export class Education extends Component {
   render() {
     return (
       <div>
-    
+
     { this.state.shwMdl  &&   <div className="modal">
-        
+
         <div className="modal-content">
         <span className="close" onClick={this.hideModal}>&times;</span>
         <p>Add educational Information Below</p>
@@ -92,7 +92,7 @@ export class Education extends Component {
         <input
         onChange={this.addSchool}
                 type="text"></input>
-                
+
         <label>Add Subject</label>
         <input
         onChange={this.addSubject}
@@ -103,7 +103,7 @@ export class Education extends Component {
         onChange={this.addGrade}
                 type="text"></input>
 
-        
+
 
 
         <button onClick={this.onSubmitTask}>Submit</button>
@@ -115,23 +115,25 @@ export class Education extends Component {
 
 <div className="hdr">
         <h2>Education</h2>
-        
+
         <button onClick={this.showModal}>Add</button>
         </div>
 
-        <p>{this.state.list.map(edu=>{
+        <div className="emplymnt">{this.state.list.map(edu=>{
           return(<div>
-            <p> School: {edu.school} --  Subject: {edu.subject} --  Grade: {edu.grade}</p>
-          
-    
+            <p> School: {edu.school}</p>
+            <p>  Subject: {edu.subject}</p>
+            <p> Grade: {edu.grade}</p>
+
+
           </div>)
-      
-        })}</p>
-        
+
+        })}</div>
+
         </div>
 
 
-      
+
 
 
     )

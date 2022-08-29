@@ -6,9 +6,9 @@ constructor(props) {
   super(props)
 
   this.state = {
-      edit: "",
+      edit: "i am rhys",
      shwMdl: false,
-     PI:""
+     PI:"i am rhys"
      
   }
 
@@ -65,10 +65,10 @@ constructor(props) {
         <span className="close" onClick={this.hideModal}>&times;</span>
         <p>Edit Personal Information Below</p>
         <div className="inputs">
-        <input
+        <textarea
         onChange={this.editInfo}
         value={this.state.edit}
-        type="textarea"></input>
+        type="textarea"></textarea>
         <button onClick={this.onSubmitTask}>Edit and close</button>
       </div>
       </div>

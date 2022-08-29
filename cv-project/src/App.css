@@ -42,4 +42,6 @@ button{background-color:blueviolet; color:rgb(167, 248, 3)}
   
   .inputs{display:flex;flex-direction: column;justify-content: center;align-items: center;}
   .inputs button{margin:10px;}
+  .emplymnt{display:flex;gap:20px;justify-content:center;}
+  .emplymnt div{border:solid red 2px;padding:4px;}
 
