@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import uniqid from 'uniqid'
 
 export class Employment extends Component {
 constructor(props) {
@@ -12,14 +12,16 @@ constructor(props) {
      endDte:"",
      position:"",
      list: [
-      {company:"Screwfix",
+      {id:uniqid(),
+        company:"Screwfix",
        start:"July 2017",
        end:"January 2019",
        position: "Service Assistant"
       },
-      {company:"Screwfix",
-       start:"July 2017",
-       end:"January 2019",
+      {id:uniqid(),
+        company:"Card connection",
+       start:"July 2019",
+       end:"January 2022",
        position: "Service Assistant"
       }
      ]
@@ -32,7 +34,7 @@ constructor(props) {
       this.addEnd = this.addEnd.bind(this)
       this.addComp = this.addComp.bind(this)
       this.addPos = this.addPos.bind(this)
-
+      this.rmvInfo = this.rmvInfo.bind(this)
 }
       showModal (){
         this.setState({
@@ -45,6 +47,11 @@ constructor(props) {
           shwMdl:false
         })
       }
+
+      rmvInfo(v){
+        const newList = this.state.list.filter(edu=>edu.id !== v)
+    this.setState({list:newList})
+  }
 
       addStrt(e){
       this.setState({strtDte:e.target.value})
@@ -66,6 +73,7 @@ constructor(props) {
           e.preventDefault();
           this.setState({
             list: this.state.list.concat({
+              id:uniqid(),
               company: this.state.Company,
               start: this.state.strtDte,
               end: this.state.endDte,
@@ -130,7 +138,8 @@ constructor(props) {
         </div>
         <div className="emplymnt">{this.state.list.map(empl=>{
           return(
-            <div>
+            <div key={empl.id}>
+            <span className="close" onClick={() => this.rmvInfo(empl.id)}>&times;</span>
               <p>Company: {empl.company}</p>
               <p>Start: {empl.start}</p>
               <p>End: {empl.end}</p>

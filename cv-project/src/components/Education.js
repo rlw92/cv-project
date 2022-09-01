@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import uniqid from "uniqid";
 
 export class Education extends Component {
     constructor(props) {
@@ -10,15 +11,15 @@ export class Education extends Component {
         Subject:"",
         grade:"",
         list: [
-          {
-            school: "Nanty comp",
+          {id:uniqid(),
+            school: "Brynmawr comp",
             subject: "Maths",
             grade:"A"
           },
-          {
-            school: "Nanty",
+          {id:uniqid(),
+            school: "Nantyglo comp",
             subject:"English",
-            grade:"B"
+            grade:"C"
           }
 
         ]
@@ -31,6 +32,7 @@ export class Education extends Component {
          this.addGrade = this.addGrade.bind(this)
          this.addSchool = this.addSchool.bind(this)
          this.addSubject = this.addSubject.bind(this)
+         this.rmvInfo = this.rmvInfo.bind(this)
 
 
    }
@@ -47,6 +49,10 @@ export class Education extends Component {
          }
 
 
+             rmvInfo(v){
+               const newList = this.state.list.filter(edu=>edu.id !== v)
+           this.setState({list:newList})
+         }
 
              addSchool(e){
              this.setState({School:e.target.value})
@@ -66,6 +72,7 @@ export class Education extends Component {
         e.preventDefault();
         this.setState({
           list: this.state.list.concat({
+            id: uniqid(),
             school: this.state.School,
             subject: this.state.Subject,
             grade: this.state.grade
@@ -120,7 +127,8 @@ export class Education extends Component {
         </div>
 
         <div className="emplymnt">{this.state.list.map(edu=>{
-          return(<div>
+          return(<div key={edu.id}>
+            <span className="close" onClick={() => this.rmvInfo(edu.id)}>&times;</span>
             <p> School: {edu.school}</p>
             <p>  Subject: {edu.subject}</p>
             <p> Grade: {edu.grade}</p>
