@@ -28,7 +28,7 @@ export class App extends Component {
           <Personalinfo func={this.pullData}/>
           <Education />
           <Employment />
-     
+     <p>this: {this.state.PIname}</p>
 
 
 

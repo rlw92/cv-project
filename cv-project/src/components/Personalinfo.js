@@ -23,7 +23,7 @@ constructor(props) {
       this.editCont=this.editCont.bind(this)
       this.onSubmitTask = this.onSubmitTask.bind(this)
 
-
+this.props.func(this.state.name)
 }
 
 
@@ -46,6 +46,7 @@ constructor(props) {
       editCont(e){this.setState({cntct: e.target.value,})}
 
 
+
       onSubmitTask = (e) => {
         e.preventDefault();
         this.setState({
@@ -53,8 +54,10 @@ constructor(props) {
           name:this.state.name,
           address:this.state.address,
           cntct: this.state.cntct,
-          shwMdl: false
+          shwMdl: false,
+
         });
+        this.props.func(this.state.name)  
       };
 
   render() {
