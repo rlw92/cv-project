@@ -7,12 +7,10 @@ constructor(props) {
 
   this.state = {
       shwMdl: false,
-
-
-     about:"i am rhys",
-     name:"Rhys",
-     address:"",
-     cntct:""
+     about:"I am Darunia, boss of the Gorons.",
+     name:"Darunia",
+     address:"Throne Room, Goron city, Kakriko Region, Hyrule",
+     cntct:"Rubyholder@rockmail.com"
 
   }
 
@@ -25,7 +23,7 @@ constructor(props) {
       this.editCont=this.editCont.bind(this)
       this.onSubmitTask = this.onSubmitTask.bind(this)
 
-this.props.func(this.state.name)
+this.props.func(this.state.name,this.state.address,this.state.cntct,this.state.about)
 }
 
 
@@ -59,7 +57,7 @@ this.props.func(this.state.name)
           shwMdl: false,
 
         });
-        this.props.func(this.state.name)
+        this.props.func(this.state.name,this.state.address,this.state.cntct,this.state.about)
       };
 
   render() {

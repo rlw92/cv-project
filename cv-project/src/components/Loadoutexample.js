@@ -38,14 +38,14 @@ render() {
 
   <div className="PISect">
   <h3>{this.props.PIname}</h3>
-  <h3>Goron City Throne Room, Kakariko Region, Hyrule</h3>
-  <h3>RubyHolder@rockmail.com</h3>
+  <h3>{this.props.PIadd}</h3>
+  <h3>{this.props.PIcontact}</h3>
   </div>
 
 
   <div className="aboutSect">
   <h2>About</h2>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin accumsan nisl velit, id vestibulum tellus luctus at. Duis quis pretium quam. Vivamus at justo arcu. Suspendisse potenti. Nulla facilisi. Maecenas metus urna, sodales eu ultricies id, scelerisque in tellus. Pellentesque molestie non quam sed consequat. Fusce sed nibh et sem fringilla venenatis eget et nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse vehicula, mi sed commodo facilisis, nibh massa sollicitudin nisl, aliquet elementum sem dolor non turpis. Etiam porta ultricies justo, nec interdum ex dapibus id. Donec feugiat porttitor semper. Pellentesque tincidunt imperdiet est, ac mattis felis porttitor id.
+  {this.props.PIabout}
   </div>
 
   <div className="eduSect">

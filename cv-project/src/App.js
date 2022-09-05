@@ -11,6 +11,9 @@ export class App extends Component {
 
     this.state={
       PIname:"",
+      location:"",
+      contact:"",
+      aboutme:"",
       EmploymentData:"",
       EducationData:""
     }
@@ -21,11 +24,14 @@ export class App extends Component {
 
   }
 
-  pullData(data) {
+  pullData(name,add,cntact,about) {
     this.setState({
-      PIname:data
+      PIname:name,
+      location:add,
+      contact:cntact,
+      aboutme:about
     })
-  console.log(data) }
+  }
 
     pullEmplData(data) {
       this.setState({
@@ -52,7 +58,13 @@ export class App extends Component {
 
 
 
-     <Loadoutexample PIname={this.state.PIname} Edudata={this.state.EducationData} Empldata={this.state.EmploymentData}/>
+     <Loadoutexample
+      PIname={this.state.PIname}
+      PIadd={this.state.location}
+      PIcontact={this.state.contact}
+      PIabout={this.state.aboutme}
+      Edudata={this.state.EducationData}
+       Empldata={this.state.EmploymentData}/>
 
 
 
