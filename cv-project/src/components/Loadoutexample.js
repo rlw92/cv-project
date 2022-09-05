@@ -37,9 +37,15 @@ render() {
   <span className="close" onClick={this.hideModal}>&times;</span>
 
   <div className="PISect">
+
+  <div>
   <h3>{this.props.PIname}</h3>
   <h3>{this.props.PIadd}</h3>
   <h3>{this.props.PIcontact}</h3>
+  </div>
+
+<div className="profimg"><img src={this.props.PIimg} alt="profile pic"></img></div>
+
   </div>
 
 

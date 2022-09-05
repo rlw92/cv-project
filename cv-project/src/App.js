@@ -14,6 +14,7 @@ export class App extends Component {
       location:"",
       contact:"",
       aboutme:"",
+      profimg:"",
       EmploymentData:"",
       EducationData:""
     }
@@ -24,12 +25,14 @@ export class App extends Component {
 
   }
 
-  pullData(name,add,cntact,about) {
+  pullData(name,add,cntact,about,img) {
     this.setState({
       PIname:name,
       location:add,
       contact:cntact,
-      aboutme:about
+      aboutme:about,
+      profimg:img
+
     })
   }
 
@@ -63,6 +66,7 @@ export class App extends Component {
       PIadd={this.state.location}
       PIcontact={this.state.contact}
       PIabout={this.state.aboutme}
+      PIimg={this.state.profimg}
       Edudata={this.state.EducationData}
        Empldata={this.state.EmploymentData}/>
 

@@ -23,11 +23,13 @@ button{background-color:blueviolet; color:rgb(167, 248, 3)}
     width: 80%; /* Could be more or less, depending on screen size */
   }
 
-.PISect{border-bottom:solid red 2px;text-align: center;}
+.PISect{border-bottom:solid red 2px;text-align: center;display:flex;gap:10px;}
 .aboutSect{border-bottom:solid red 2px;padding-bottom: 24px;}
 .emplSect{border-bottom:solid red 2px;padding-bottom: 24px;}
 .eduSect{border-bottom:solid red 2px;padding-bottom: 24px;}
 .modal-content h2{text-align: center;}
+.profimg{height:200px;}
+.profimg img{max-width:100%;max-height:100%;}
 
   /* The Close Button */
   .close {
