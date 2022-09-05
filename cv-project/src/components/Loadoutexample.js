@@ -89,9 +89,11 @@ render() {
 
   </div>
 
+<div className="ldbtn"><button>Save as pdf</button></div>
+  </div>
+  </div>
 
-  </div>
-  </div>
+
 }
 
 </div>
