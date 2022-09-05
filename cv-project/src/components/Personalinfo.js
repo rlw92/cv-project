@@ -7,6 +7,7 @@ constructor(props) {
 
   this.state = {
       shwMdl: false,
+
      about:"i am rhys",
      name:"Rhys",
      address:"",
@@ -57,7 +58,7 @@ this.props.func(this.state.name)
           shwMdl: false,
 
         });
-        this.props.func(this.state.name)  
+        this.props.func(this.state.name)
       };
 
   render() {
@@ -70,7 +71,6 @@ this.props.func(this.state.name)
          { this.state.shwMdl  &&   <div className="modal">
 
         <div className="modal-content">
-        <span className="close" onClick={this.hideModal}>&times;</span>
         <p>Edit Personal Information Below</p>
         <div className="inputs">
 
@@ -93,7 +93,7 @@ this.props.func(this.state.name)
         type="textarea"></textarea>
 
 
-        <button onClick={this.onSubmitTask}>Edit and close</button>
+        <button onClick={this.onSubmitTask}>Close</button>
       </div>
       </div>
       </div>

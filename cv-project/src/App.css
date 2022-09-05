@@ -13,7 +13,7 @@ button{background-color:blueviolet; color:rgb(167, 248, 3)}
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   }
-  
+
   /* Modal Content/Box */
   .modal-content {
     background-color: #fefefe;
@@ -22,7 +22,13 @@ button{background-color:blueviolet; color:rgb(167, 248, 3)}
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
   }
-  
+
+.PISect{border-bottom:solid red 2px;text-align: center;}
+.aboutSect{border-bottom:solid red 2px;padding-bottom: 24px;}
+.emplSect{border-bottom:solid red 2px;padding-bottom: 24px;}
+.eduSect{border-bottom:solid red 2px;padding-bottom: 24px;}
+.modal-content h2{text-align: center;}
+
   /* The Close Button */
   .close {
     color: #aaa;
@@ -30,7 +36,7 @@ button{background-color:blueviolet; color:rgb(167, 248, 3)}
     font-size: 28px;
     font-weight: bold;
   }
-  
+
   .close:hover,
   .close:focus {
     color: black;
@@ -39,9 +45,11 @@ button{background-color:blueviolet; color:rgb(167, 248, 3)}
   }
 
   p{text-align:center;}
-  
+
   .inputs{display:flex;flex-direction: column;justify-content: center;align-items: center;}
   .inputs button{margin:10px;}
   .emplymnt{display:flex;gap:20px;justify-content:center;}
   .emplymnt div{border:solid red 2px;padding:4px;}
-
+  .ldbtn{display:flex;justify-content: center;}
+  .ldbtn button{width:60%;padding:4px;}
+  .ldbtn button:hover{background-color:red;}

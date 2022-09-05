@@ -13,7 +13,7 @@ constructor(props) {
      position:"",
      list: [
       {id:uniqid(),
-        company:"Screwfix",
+        company:"EE",
        start:"July 2017",
        end:"January 2019",
        position: "Service Assistant"
@@ -24,7 +24,7 @@ constructor(props) {
        end:"January 2022",
        position: "Service Assistant"
       }
-     ]
+    ]
 
   }
 
@@ -35,6 +35,8 @@ constructor(props) {
       this.addComp = this.addComp.bind(this)
       this.addPos = this.addPos.bind(this)
       this.rmvInfo = this.rmvInfo.bind(this)
+
+      this.props.func(this.state.list)
 }
       showModal (){
         this.setState({
@@ -51,6 +53,8 @@ constructor(props) {
       rmvInfo(v){
         const newList = this.state.list.filter(edu=>edu.id !== v)
     this.setState({list:newList})
+    this.props.func(newList)
+
   }
 
       addStrt(e){
@@ -83,9 +87,9 @@ constructor(props) {
           strtDte: '',
           endDte: '',
           position:  '',
-            shwMdl: false
-          });
-        };
+            shwMdl: false,
+                    });
+               };
 
 
 
