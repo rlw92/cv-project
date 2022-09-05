@@ -13,16 +13,16 @@ constructor(props) {
      position:"",
      list: [
       {id:uniqid(),
-        company:"EE",
-       start:"July 2017",
-       end:"January 2019",
-       position: "Service Assistant"
+        company:"Hylian Alliance",
+       start:"year 124",
+       end:"year 137",
+       position: "Goron-Royal Relations Liason"
       },
       {id:uniqid(),
-        company:"Card connection",
-       start:"July 2019",
-       end:"January 2022",
-       position: "Service Assistant"
+        company:"Goron Mining company",
+       start:"Year 137",
+       end:"Ongoing",
+       position: "Owner/Manager"
       }
     ]
 

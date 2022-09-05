@@ -8,6 +8,7 @@ constructor(props) {
   this.state = {
       shwMdl: false,
 
+
      about:"i am rhys",
      name:"Rhys",
      address:"",

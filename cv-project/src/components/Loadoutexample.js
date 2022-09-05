@@ -48,6 +48,23 @@ render() {
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin accumsan nisl velit, id vestibulum tellus luctus at. Duis quis pretium quam. Vivamus at justo arcu. Suspendisse potenti. Nulla facilisi. Maecenas metus urna, sodales eu ultricies id, scelerisque in tellus. Pellentesque molestie non quam sed consequat. Fusce sed nibh et sem fringilla venenatis eget et nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse vehicula, mi sed commodo facilisis, nibh massa sollicitudin nisl, aliquet elementum sem dolor non turpis. Etiam porta ultricies justo, nec interdum ex dapibus id. Donec feugiat porttitor semper. Pellentesque tincidunt imperdiet est, ac mattis felis porttitor id.
   </div>
 
+  <div className="eduSect">
+  <h2>Education</h2>
+  <div>
+  {this.props.Edudata.map(empl=>{
+    return(
+      <div key={empl.id}>
+       <p> <strong>School</strong>:<span>&nbsp;&nbsp;</span> {empl.school} <span>&nbsp;&nbsp;</span>
+        <strong>Subject</strong>:<span>&nbsp;&nbsp;</span> {empl.subject} <span>&nbsp;&nbsp;</span>
+        <strong>Grade</strong>: <span>&nbsp;&nbsp;</span>{empl.grade}</p>
+
+
+      </div>
+    )
+  })}</div>
+
+</div>
+
   <div className="emplSect">
   <h2>Employment</h2>
   <div>
@@ -65,11 +82,6 @@ render() {
   </div>
 
   </div>
-
-  <div className="eduSect">
-  <h2>Education</h2>
-
-</div>
 
 
   </div>

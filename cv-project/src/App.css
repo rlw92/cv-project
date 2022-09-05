@@ -51,5 +51,5 @@ button{background-color:blueviolet; color:rgb(167, 248, 3)}
   .emplymnt{display:flex;gap:20px;justify-content:center;}
   .emplymnt div{border:solid red 2px;padding:4px;}
   .ldbtn{display:flex;justify-content: center;}
-  .ldbtn button{width:60%;padding:4px;}
+  .ldbtn button{width:60%;padding:4px;margin-top: 16px;}
   .ldbtn button:hover{background-color:red;}

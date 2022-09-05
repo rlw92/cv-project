@@ -11,11 +11,13 @@ export class App extends Component {
 
     this.state={
       PIname:"",
-      EmploymentData:""
+      EmploymentData:"",
+      EducationData:""
     }
 
     this.pullData=this.pullData.bind(this)
     this.pullEmplData=this.pullEmplData.bind(this)
+    this.pullEduData=this.pullEduData.bind(this)
 
   }
 
@@ -31,20 +33,26 @@ export class App extends Component {
       })
     console.log(data)}
 
+    pullEduData(data){
+      this.setState({
+        EducationData:data
+      })
+    }
+
 
   render() {
     return (
       <div className="skltn">
         <h1 style={{textAlign:"center"}}>CV Builder</h1>
           <Personalinfo func={this.pullData}/>
-          <Education />
+          <Education func={this.pullEduData}/>
           <Employment func={this.pullEmplData}/>
-     <p>this: {this.state.PIname}</p>
 
 
 
 
-     <Loadoutexample PIname={this.state.PIname} Empldata={this.state.EmploymentData}/>
+
+     <Loadoutexample PIname={this.state.PIname} Edudata={this.state.EducationData} Empldata={this.state.EmploymentData}/>
 
 
 

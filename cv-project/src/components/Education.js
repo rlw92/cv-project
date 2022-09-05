@@ -12,14 +12,14 @@ export class Education extends Component {
         grade:"",
         list: [
           {id:uniqid(),
-            school: "Brynmawr comp",
-            subject: "Maths",
-            grade:"A"
+            school: "Dodongo Nursery",
+            subject: "Mineral Identification",
+            grade:"B"
           },
           {id:uniqid(),
-            school: "Nantyglo comp",
-            subject:"English",
-            grade:"C"
+            school: "Dodongo University",
+            subject:"Mining Studies",
+            grade:"A*"
           }
 
         ]
@@ -33,6 +33,8 @@ export class Education extends Component {
          this.addSchool = this.addSchool.bind(this)
          this.addSubject = this.addSubject.bind(this)
          this.rmvInfo = this.rmvInfo.bind(this)
+
+         this.props.func(this.state.list)
 
 
    }
@@ -52,6 +54,7 @@ export class Education extends Component {
              rmvInfo(v){
                const newList = this.state.list.filter(edu=>edu.id !== v)
            this.setState({list:newList})
+           this.props.func(newList)
          }
 
              addSchool(e){
@@ -70,18 +73,21 @@ export class Education extends Component {
 
     onSubmitTask = (e) => {
         e.preventDefault();
+        const newList = this.state.list.concat({
+          id:uniqid(),
+          school: this.state.School,
+          subject: this.state.Subject,
+          grade: this.state.grade,
+
+        })
         this.setState({
-          list: this.state.list.concat({
-            id: uniqid(),
-            school: this.state.School,
-            subject: this.state.Subject,
-            grade: this.state.grade
-          }),
+          list:newList,
         School: '',
         Subject: '',
         grade: '',
           shwMdl: false
         });
+        this.props.func(newList)
       };
 
 
