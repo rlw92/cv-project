@@ -50,12 +50,7 @@ constructor(props) {
         })
       }
 
-      rmvInfo(v){
-        const newList = this.state.list.filter(edu=>edu.id !== v)
-    this.setState({list:newList})
-    this.props.func(newList)
 
-  }
 
       addStrt(e){
       this.setState({strtDte:e.target.value})
@@ -73,22 +68,31 @@ constructor(props) {
         this.setState({position:e.target.value})
       }
 
+      rmvInfo(v){
+        const newList = this.state.list.filter(edu=>edu.id !== v)
+    this.setState({list:newList})
+    this.props.func(newList)
+
+  }
+
       onSubmitTask = (e) => {
           e.preventDefault();
+          const newList = this.state.list.concat({
+            id:uniqid(),
+            company: this.state.Company,
+            start: this.state.strtDte,
+            end: this.state.endDte,
+            position: this.state.position
+          })
           this.setState({
-            list: this.state.list.concat({
-              id:uniqid(),
-              company: this.state.Company,
-              start: this.state.strtDte,
-              end: this.state.endDte,
-              position: this.state.position
-            }),
+          list:newList,
           Company: '',
           strtDte: '',
           endDte: '',
           position:  '',
             shwMdl: false,
                     });
+          this.props.func(newList)
                };
 
 
