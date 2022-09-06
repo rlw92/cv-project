@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-
+import html2canvas from 'html2canvas';
+import { jsPDF } from 'jspdf';
 
 export class Loadoutexample extends Component {
 constructor(props) {
@@ -10,6 +11,8 @@ constructor(props) {
 
   this.showModal = this.showModal.bind(this)
   this.hideModal = this.hideModal.bind(this)
+  this.printDocument=this.printDocument.bind(this)
+
 
 }
 
@@ -25,6 +28,17 @@ hideModal (){
   })
 }
 
+async printDocument (){
+  const pdf = new jsPDF("portrait", "pt", "a4");
+    const data = await html2canvas(document.querySelector("#divToPrint"));
+    const img = data.toDataURL("image/png");
+    const imgProperties = pdf.getImageProperties(img);
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = (imgProperties.height * pdfWidth) / imgProperties.width;
+    pdf.addImage(img, "PNG", 0, 0, pdfWidth, pdfHeight);
+    pdf.save("shipping_label.pdf");
+}
+
 render() {
 
   return (
@@ -35,6 +49,8 @@ render() {
   this.state.shwMdl  &&   <div className="modal">
   <div className="modal-content">
   <span className="close" onClick={this.hideModal}>&times;</span>
+
+<div id="divToPrint">
 
   <div className="PISect">
 
@@ -86,10 +102,10 @@ render() {
     )
   })}
   </div>
-
+  </div>
   </div>
 
-<div className="ldbtn"><button>Save as pdf</button></div>
+<div className="ldbtn"><button onClick={this.printDocument}>Save as pdf</button></div>
   </div>
   </div>
 
