@@ -36,7 +36,7 @@ async printDocument (){
     const pdfWidth = pdf.internal.pageSize.getWidth();
     const pdfHeight = (imgProperties.height * pdfWidth) / imgProperties.width;
     pdf.addImage(img, "PNG", 0, 0, pdfWidth, pdfHeight);
-    pdf.save("shipping_label.pdf");
+    pdf.save("CV.pdf");
 }
 
 render() {
